@@ -42,6 +42,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
     backports (3.11.0)
+    bcrypt (3.1.11)
     bcrypt (3.1.11-x64-mingw32)
     bindex (0.5.0)
     builder (3.2.3)
@@ -98,6 +99,7 @@ GEM
     execjs (2.7.0)
     factory_bot (4.8.2)
       activesupport (>= 3.0.0)
+    ffi (1.9.18)
     ffi (1.9.18-x64-mingw32)
     gherkin (5.0.0)
     globalid (0.4.1)
@@ -127,8 +129,11 @@ GEM
     multi_json (1.13.1)
     multi_test (0.1.2)
     nio4r (2.2.0)
+    nokogiri (1.8.1)
+      mini_portile2 (~> 2.3.0)
     nokogiri (1.8.1-x64-mingw32)
       mini_portile2 (~> 2.3.0)
+    pg (0.21.0)
     pg (0.21.0-x64-mingw32)
     pry (0.11.3)
       coderay (~> 1.1.0)
@@ -243,7 +248,9 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
+  ruby
   x64-mingw32
+  x86_64-linux
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
