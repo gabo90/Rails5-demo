@@ -1,0 +1,23 @@
+languaje: ruby
+rvm:
+- 2.2.6
+before_script:
+- bundle exec rake db:create --all
+- bundle exec rake db:migrate
+script:
+- bundle exec rake ci:tests
+services:
+- postgresql
+notifications:
+  email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: c7DeuVSWtoDvoR5jO98nLK+oQqVzfMrUAajT8q2UsQdT0Um2VX2whv7XHpQygdJeDD3qBanmOjsIl2jwi30Kx5xxlJJFY4gVuzb1O/prnUX6Bn/DY7Gc8IjTEZ/ZoLK7IynEbolhrUwJBr/V6br0tMK2OrW0h1TrMFD3Hj0xET0+NccOA3WheMElv8StPi2TAZDtMtUkQDt9CIoNM5tFYmYrGk2CxIO7SpOBpxClKXvO+Ml4fhOqpeskxI02l2TQVXa2UzSa7pI+vu+Iw1vE2tT8kb4lQSzX+Rlmv364kz00x7SfmxRylJE1CG5udTzJBP/Wf3kSB++6nWCKh1GnJxtLpK2iw15fa5rF/XDEVc2oNmbqOYeF6otJrMkMk6oITbm1rfcFW6huwvi0vIHjnh08yMw+KqI0k5Ohg91wvai8o93cumZSISdRS8gEX67UW3CkdnS86UbMZ8XVJio9F/K+ML3CWUT/MDyMJhx1p5MDlyJIxJGoSCmKcmcBQdXisNzcL8xE8PlB89PQIdQ/z48/Gxtpuqi6nPc/Hkga7x8RRKZJBJ+fmB3Zjv4aafhSJ6rnu5QZLTc5x832ZrG1e58D7cdrz5f/223G9QTLm8bKjr263DK0R+jHTLpqo6ncbvSnsDhlsVJzI/yUxAOLro05SHaN/TWmpMZ8zB/BBKA=
+  app:
+    develop: ror5-demo
+    master: ror5-demo-stage
+  on:
+    repo: gabo90/Rails5-demo
+  run:
+    - "rails db:migrate"
